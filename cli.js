@@ -10,13 +10,13 @@ const figlet = require('figlet')
 
 program
   // 定义命令和参数
-  .command('template <app-name>')
+  .command('template')
   .description('create a new template')
   // -f or --force 为强制创建，如果创建的目录存在则直接覆盖
   .option('-f, --force', 'overwrite target directory if it exist')
-  .action((name, options) => {
+  .action((option) => {
      // 在 template.js 中执行创建任务
-     require('./lib/template.js')(name, options)
+     require('./lib/template.js')(option)
   })
 
 // 配置 config 命令
